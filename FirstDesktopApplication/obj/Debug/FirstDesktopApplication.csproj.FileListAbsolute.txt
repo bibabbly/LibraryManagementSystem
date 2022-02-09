@@ -84,3 +84,4 @@ C:\Users\bizit\source\repos\FirstDesktopApplication\FirstDesktopApplication\bin\
 C:\Users\bizit\source\repos\FirstDesktopApplication\FirstDesktopApplication\bin\Debug\supermarketdb_log.ldf
 C:\Users\bizit\source\repos\FirstDesktopApplication\FirstDesktopApplication\obj\Debug\FirstDesktopApplication.CategoryForm.resources
 C:\Users\bizit\source\repos\FirstDesktopApplication\FirstDesktopApplication\obj\Debug\FirstDesktopApplication.SellerForm.resources
+C:\Users\bizit\source\repos\FirstDesktopApplication\FirstDesktopApplication\obj\Debug\FirstDesktopApplication.SellingForm.resources

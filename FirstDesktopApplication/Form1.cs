@@ -37,5 +37,44 @@ namespace FirstDesktopApplication
         {
             Application.Exit();
         }
+
+        private void bunifuThinButton21_Click(object sender, EventArgs e)
+        {
+            if (uname.Text == "" || password.Text == "") {
+                MessageBox.Show("Username or Password can not be Empty");
+            }
+            else {
+                if(roleCb.SelectedIndex > -1)
+                {
+
+                    if (roleCb.SelectedItem.ToString() == "Admin")
+                    {
+
+                        if (uname.Text == "Admin" && password.Text == "Admin")
+                        {
+                            ProductForm prod = new ProductForm();
+                            prod.Show();
+                            this.Hide();
+                        }
+                        else
+                        {
+                            MessageBox.Show("If you are admin, Please enter the correct credentials");
+                        }
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("You are in  Seller Section ");
+                    }
+
+
+                }
+                
+                else {
+                    MessageBox.Show("Select a Role ");
+                }
+                
+                }
+        }
     }
 }
