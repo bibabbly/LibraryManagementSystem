@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace FirstDesktopApplication
 {
@@ -37,6 +38,8 @@ namespace FirstDesktopApplication
         {
             Application.Exit();
         }
+        SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\bizit\OneDrive\Documents\studentManagementTable.mdf;Integrated Security=True;Connect Timeout=30");
+
 
         private void bunifuThinButton21_Click(object sender, EventArgs e)
         {
@@ -64,7 +67,31 @@ namespace FirstDesktopApplication
                     }
                     else
                     {
-                        MessageBox.Show("You are in  Seller Section ");
+                        try { 
+                        conn.Open();
+                            String sql = "Select count (*) from sellerTbl where sellerName='" + uname.Text + "' and sellerPassword ='" + password.Text + "'";
+                            SqlDataAdapter sda = new SqlDataAdapter(sql, conn);
+                            DataTable dt=new DataTable();
+                            sda.Fill(dt);
+
+                            if (dt.Rows[0][0].ToString() == "1")
+                            {
+                                SellingForm sell = new SellingForm();
+                               SellingForm.usernameee= uname.Text;
+                                sell.Show();
+                                this.Hide();
+                                conn.Close();
+                            }
+                            else {
+                                MessageBox.Show("Wrong Username or Password");
+                            }
+                            conn.Close();
+
+                        }
+                        catch(Exception ex) {
+                            MessageBox.Show("Login failed due to "+ex.Message);
+
+                        }
                     }
 
 

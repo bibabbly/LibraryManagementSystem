@@ -68,7 +68,7 @@
             this.MyProgress.Animation = 0;
             this.MyProgress.AnimationSpeed = 220;
             this.MyProgress.AnimationStep = 10;
-            this.MyProgress.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(223)))), ((int)(((byte)(223)))));
+            this.MyProgress.BackColor = System.Drawing.Color.DarkOrange;
             this.MyProgress.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("MyProgress.BackgroundImage")));
             this.MyProgress.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(223)))), ((int)(((byte)(223)))));
             this.MyProgress.BorderRadius = 9;
@@ -80,7 +80,7 @@
             this.MyProgress.MinimumValue = 0;
             this.MyProgress.Name = "MyProgress";
             this.MyProgress.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            this.MyProgress.ProgressBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(223)))), ((int)(((byte)(223)))));
+            this.MyProgress.ProgressBackColor = System.Drawing.Color.DarkOrange;
             this.MyProgress.ProgressColorLeft = System.Drawing.Color.White;
             this.MyProgress.ProgressColorRight = System.Drawing.Color.White;
             this.MyProgress.Size = new System.Drawing.Size(917, 17);

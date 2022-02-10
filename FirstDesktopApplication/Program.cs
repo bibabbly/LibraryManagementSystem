@@ -16,9 +16,7 @@ namespace FirstDesktopApplication
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new SellingForm());
-            // Application.Run(new Form1());
-           // Application.Run(new CategoryForm());
+            Application.Run(new Splash());
         }
     }
 }

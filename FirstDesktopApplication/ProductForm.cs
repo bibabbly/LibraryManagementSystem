@@ -120,7 +120,11 @@ namespace FirstDesktopApplication
                 dt.Load(dr);
 
                 prodCategory.ValueMember = "catName";
-                prodCategory.DataSource = dt;               
+                prodCategory.DataSource = dt;
+
+                catSearch.ValueMember = "catName";
+                catSearch.DataSource = dt;
+            
 
                 conn.Close();
         }
@@ -225,6 +229,55 @@ namespace FirstDesktopApplication
                 MessageBox.Show(ex.Message);
             }
 
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+           /* conn.Open();
+            String sql="Select * from productTbl where prodCat ='"+catSearch.Text+"'";
+            SqlDataAdapter sda=new SqlDataAdapter(sql, conn);
+            SqlCommandBuilder scb = new SqlCommandBuilder(sda);
+            var ds=new DataSet();
+            sda.Fill(ds);
+            prodDvd.DataSource = ds.Tables[0];
+            conn.Close();
+           */
+        }
+
+        private void prodCategory_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            populate();
+        }
+
+        private void catSearch_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            String sql = "Select * from productTbl where prodCat ='" + catSearch.Text + "'";
+            SqlDataAdapter sda = new SqlDataAdapter(sql, conn);
+            SqlCommandBuilder scb = new SqlCommandBuilder(sda);
+            var ds = new DataSet();
+            sda.Fill(ds);
+            prodDvd.DataSource = ds.Tables[0];
+            conn.Close();
+
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form1 login = new Form1();
+            login.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            SellingForm sell=new SellingForm();
+            sell.Show();
+            this.Hide();
         }
     }
 }

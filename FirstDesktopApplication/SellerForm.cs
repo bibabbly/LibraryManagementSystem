@@ -13,6 +13,7 @@ namespace FirstDesktopApplication
 {
     public partial class SellerForm : Form
     {
+        
         public SellerForm()
         {
             InitializeComponent();
@@ -124,7 +125,9 @@ namespace FirstDesktopApplication
         private void SellerForm_Load(object sender, EventArgs e)
         {
             populate();
+          
         }
+        
 
         private void button4_Click(object sender, EventArgs e)
         {
@@ -168,6 +171,13 @@ namespace FirstDesktopApplication
             sTel.Text = sellerDVD.SelectedRows[0].Cells[3].Value.ToString();
             sPass.Text = sellerDVD.SelectedRows[0].Cells[4].Value.ToString();
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            SellingForm sell = new SellingForm();
+            sell.Show();
+            this.Hide();
         }
     }
 }
